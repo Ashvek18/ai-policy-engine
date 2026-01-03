@@ -1,6 +1,6 @@
 import express from 'express';
 import Policy from '../models/Policy.js';
-import AuditLog from '../models/auditLog.js';
+import AuditLog from '../models/AuditLog.js';
 import { evaluatePolicy } from '../services/descision.service.js';
 import { descisionSchema } from '../validators/descision.schema.js';
 
