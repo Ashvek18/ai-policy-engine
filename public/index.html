@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Policy Decision Engine</h3>
+
+  <input id="userType" placeholder="User Type (Gold)" />
+  <input id="amount" placeholder="Amount" />
+  <input id="country" placeholder="Country" />
+
+  <button onclick="send()">Evaluate</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    async function send() {
+      const res = await fetch("/api/descision/evaluate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userType: document.getElementById("userType").value,
+          amount: Number(document.getElementById("amount").value),
+          country: document.getElementById("country").value
+        })
+      });
+
+      document.getElementById("result").innerText =
+        JSON.stringify(await res.json(), null, 2);
+    }
+  </script>
+</body>
+</html>
