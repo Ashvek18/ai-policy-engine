@@ -1,5 +1,5 @@
 import express from 'express';
-import Policy from '../models/policy.js';
+import Policy from '../models/Policy.js';
 import AuditLog from '../models/auditLog.js';
 import { evaluatePolicy } from '../services/descision.service.js';
 import { descisionSchema } from '../validators/descision.schema.js';
